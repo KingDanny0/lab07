@@ -1,5 +1,6 @@
 package sol
 
+
 /**
  * Names is a class that contains and modifies a val Array.
  *
@@ -8,8 +9,16 @@ package sol
  */
 class Names (nameList: Array[String]) {
 
+
+
   def clear(name: String) {
+    val b = this.nameList.length
     //TODO: Your code should go here
+    for (a <- 1 until b) {
+      if (name.equals(this.nameList(a))) {
+        this.nameList(a) = "CLEARED"
+      }
+    }
   }
 }
 
@@ -21,8 +30,18 @@ class Names (nameList: Array[String]) {
  */
 class Names2 (private var nameList: List[String]) {
 
+
+
   def clear(name: String) {
-    //TODO: Your code goes here
+
+    this.nameList.map(x =>
+      if (name.equals(x)) {
+        "CLEARED"
+      }
+      else {
+        x
+      }
+    )
   }
 }
 
